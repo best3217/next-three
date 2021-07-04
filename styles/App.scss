@@ -1,0 +1,468 @@
+// Thank you to the great 3D animators
+// "Where a Forest Grows" (https://skfb.ly/6TrT9) by Wren MB is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+//"Robot Playground" (https://skfb.ly/6QXFq) by Hadrien59 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  transition: 0.4s ease-in-out;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.scrollArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 99999999999999999;
+}
+// Contact Form
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  background: #0e101c;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+p.error {
+  color: #bf1650;
+}
+
+p.error::before {
+  display: inline;
+  content: '⚠ ';
+}
+
+input,
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 1em;
+  font-size: 14px;
+}
+
+button#close-button {
+  font-size: 1.5em;
+  margin: 0.5em;
+  color: white;
+}
+button:hover {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: transparent !important;
+}
+
+.Toastify__toast--default {
+  background: #00ff1f !important;
+  color: #fff !important;
+  text-align: center;
+}
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  text-align: center;
+}
+img.logo {
+  width: 10%;
+}
+button#contact-us {
+  background-color: #fff;
+  border-color: white;
+  color: #000000;
+}
+button[type='submit'],
+input[type='submit'] {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 1em;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+button[type='submit']:hover,
+input[type='submit']:hover {
+  background: #bf1650;
+}
+
+button[type='submit']:active,
+input[type='button']:active,
+input[type='submit']:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled {
+  opacity: 0.4;
+}
+
+input[type='button']:hover {
+  transition: 0.3s all;
+}
+
+button[type='submit'],
+input[type='button'],
+input[type='submit'] {
+  -webkit-appearance: none;
+}
+
+button[type='button'] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+hr {
+  margin-top: 30px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 20%;
+}
+
+.facebook-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 20%;
+}
+.contact-us-title {
+  text-align: center;
+}
+header {
+  position: absolute;
+  z-index: 14765197;
+  width: 100%;
+  padding: 1em;
+  height: 10%;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+    nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li {
+          list-style: none;
+          margin: 0 60px;
+          &.btn {
+            button {
+              color: #fff;
+              font-weight: 600;
+              background: #23232a;
+              padding: 16px 24px;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+          }
+          a {
+            text-transform: capitalize;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  width: 100%;
+  margin-right: 20em;
+
+  span {
+    display: block;
+  }
+  @media (max-width: 1440px) {
+    font-size: 1.5rem;
+  }
+}
+
+li.services {
+  list-style: none;
+  cursor: pointer;
+  margin: 1em 3em;
+}
+.services.Web-Applications\&MobileApplications,
+.services.SearchEngineOptimization\&Marketing,
+.services.Automation\&Software {
+  transition: all 0.2s ease-in-out;
+  text-shadow: -4px 1px 2px #000000;
+  -webkit-animation: scale-up-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.services.Web-Applications\&MobileApplications:hover {
+  color: #49ff89;
+  transform: scale(2);
+  font-weight: bold;
+}
+li.services.SearchEngineOptimization\&Marketing:hover {
+  color: #10dafd;
+  transform: scale(1.01);
+  font-weight: bold;
+}
+
+.services.Automation\&Software:hover {
+  color: #d61d9f;
+  transform: scale(1.01);
+  font-weight: bold;
+}
+
+blockquote.web-applications {
+  background: #075544;
+  border-left: 10px solid #fff;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+blockquote.web-applications:before {
+  color: #dee9be;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote.search {
+  background: #0b7ee6;
+  border-left: 10px solid #fff;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+blockquote.search:before {
+  color: #0b5190;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote.automation {
+  background: #86008a;
+  border-left: 10px solid #fff;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+blockquote.automation:before {
+  color: #fff;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+blockquote {
+  border-radius: 5%;
+}
+
+.description-div {
+  text-align: center;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.services-list {
+  margin-top: 4em;
+}
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-bar-container {
+  width: 100px;
+  height: 32px;
+  background: #272727;
+}
+
+.loading-bar {
+  height: 32px;
+  background: #075544;
+}
+
+@media screen and (max-width: 1000px) {
+  .ReactModal__Content.ReactModal__Content--after-open {
+    width: 70% !important;
+  }
+  .title {
+    text-align: center;
+    margin: 0 0;
+  }
+
+  img.logo {
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  li.services {
+    margin: 1em 1em;
+  }
+
+  img.logo {
+    width: 20% !important;
+  }
+  li.btn {
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  li.services {
+    margin: 0.5em 0.5em;
+  }
+  blockquote {
+    font-size: 0.8em;
+  }
+  img.logo {
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 405px) {
+  li.services {
+    margin: 0.2em 0.2em;
+  }
+  .ReactModal__Content.ReactModal__Content--after-open {
+    width: 100% !important;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-6-28 23:46:19
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes scale-up-top {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+}
+@keyframes scale-up-top {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+}
+
+#__next{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
