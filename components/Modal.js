@@ -61,6 +61,7 @@ function ContactModal({ modalOpen, setModalState, toast, ToastContainer }) {
     setEmailError(emailErr);
     setMessageError(messageErr);
     let noErrors = !nameErr && !phoneErr && !emailErr && !messageErr;
+    console.log(process.env.REACT_APP_SERVICE_ID)
 
     if (noErrors) {
       try {
@@ -70,7 +71,6 @@ function ContactModal({ modalOpen, setModalState, toast, ToastContainer }) {
           number: data.phoneNumber,
           message: data.message,
         };
-        console.log(emailjs)
         await emailjs.send(
           process.env.REACT_APP_SERVICE_ID,
           process.env.REACT_APP_TEMPLATE_ID,

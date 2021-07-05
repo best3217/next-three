@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
     <Component {...pageProps} />
     <Head>
       <title>cyberoni</title>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="title" content="Engage your online presence while attracting new customers and lightening your workload." />
       <meta
